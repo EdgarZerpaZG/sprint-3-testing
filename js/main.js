@@ -1,1 +1,0 @@
-console.log("Saludos desde el main.js");
