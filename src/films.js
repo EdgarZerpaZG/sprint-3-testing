@@ -46,15 +46,26 @@ function orderByYear(array) {
   const yearMovie = array.filter(item => item.year !== undefined && item.score !== null);
   resultFive.push(...yearMovie);
   console.log("EXERCICE 5 ->", resultFive); 
-  resultFive.sort((a, b) => a.year - b.year);
-  resultFive.sort();
+  // resultFive.sort((a, b) => a.year - b.year);
+  // resultFive.sort((x, y) => x.title.localeCompare(y.title));
+  resultFive.sort((a, b) => {
+     if (a.year !== b.year) {
+       return a.year - b.year;
+     }
+     return a.title.localeCompare(b.title);
+    });
   return resultFive;
 }
 
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
-
+function moviesAverageByCategory(array, director) {
+  let resultSix = 0;
+  const directorCategory = array.filter(item => item.director === director);
+  const directorCategoryTotal = directorCategory.filter(item => item.genre !== undefined && item.genre !== null);
+  resultSix = parseFloat((directorCategoryTotal.reduce((accu, value) => accu + value.genre, 0) / directorCategoryTotal.length).toFixed(2));
+  console.log("EXERCICE 6 ->", resultSix);
+  return resultSix;
 }
 
 // Exercise 7: Modify the duration of movies to minutes
