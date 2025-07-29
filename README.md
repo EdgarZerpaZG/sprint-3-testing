@@ -1,3 +1,3 @@
-### Evaluación del Sprint N°3 de la especialiación de React/Angual en la IT Academy
+# Sprint N°3: Testing
 
-# El siguiente proyecto correspoden a la evaluación del Sprint N°3: Testing.
+The next project its about testing practices.

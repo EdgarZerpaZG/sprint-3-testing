@@ -1,4 +1,3 @@
-// Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let resultOne =  [];
   const director = array.map(item => item.director);
@@ -7,7 +6,6 @@ function getAllDirectors(array) {
   return resultOne;
 }
 
-// Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   let resultTwo = [];
   const directorMovie = array.filter(item => item.director === director);
@@ -17,7 +15,6 @@ function getMoviesFromDirector(array, director) {
   return resultTwo;
 }
 
-// Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
   let resultThree = 0;
   const directorScore = array.filter(item => item.director === director);
@@ -27,7 +24,6 @@ function moviesAverageOfDirector(array, director) {
   return resultThree;
 }
 
-// Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
   let resultFour =  [];
   for(let i = 0; i < array.length; i++) {
@@ -38,16 +34,11 @@ function orderAlphabetically(array) {
   return resultFour.slice(0, 20);
 }
 
-
-
-// Exercise 5: Order by year, ascending
 function orderByYear(array) {
   let resultFive =  [];
   const yearMovie = array.filter(item => item.year !== undefined && item.score !== null);
   resultFive.push(...yearMovie);
   console.log("EXERCICE 5 ->", resultFive); 
-  // resultFive.sort((a, b) => a.year - b.year);
-  // resultFive.sort((x, y) => x.title.localeCompare(y.title));
   resultFive.sort((a, b) => {
      if (a.year !== b.year) {
        return a.year - b.year;
@@ -57,8 +48,6 @@ function orderByYear(array) {
   return resultFive;
 }
 
-
-// Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, genre) {
   let resultSix = 0;
   const avarageCategory = array.filter(item => item.genre.find(gen => gen === genre));
@@ -68,7 +57,6 @@ function moviesAverageByCategory(array, genre) {
   return resultSix;
 }
 
-// Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
   let resultSeven = array.map(item => {
     const duration = item.duration;
@@ -97,14 +85,18 @@ function hoursToMinutes(array) {
 
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear(array) {
+function bestFilmOfYear(array, year) {
   let resultEight = [];
-  const yearFilm = array.map(item => item.year);
-  resultEight = yearFilm;
+  let yearFilmsScore = []
+  const yearFilm = array.filter(item => item.year === year);
+  const yearFilms = yearFilm.filter(item => item.score !== undefined && item.score !== null);
+  yearFilmsScore.push(...yearFilms);
+  resultEight.push(yearFilmsScore.reduce((max, objeto) => {
+    return objeto.score > max.score ? objeto : max;
+  }, yearFilmsScore[0]))
   console.log("EXERCISE 8 ->", resultEight);
   return resultEight;
 }
-
 
 
 // The following is required to make unit tests work.
