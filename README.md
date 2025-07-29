@@ -1,3 +1,3 @@
-# Sprint N°3: Testing
+# IT Academy - Sprint N°3: Testing
 
 The next project its about testing practices.
