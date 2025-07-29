@@ -298,14 +298,14 @@ describe('Function "moviesAverageByCategory"', () => {
   });
 
   it('should return a number', () => {
-     expect(typeof moviesAverageByCategory(movies, 'Stanley Kubrick')).toBe('number');
+     expect(typeof moviesAverageByCategory(movies, 'Drama')).toBe('number');
    });
 
    it('should be different from NaN', () => {
-     expect(moviesAverageByCategory(movies, 'Stanley Kubrick')).not.toBeNaN();
+     expect(moviesAverageByCategory(movies, 'Drama')).not.toBeNaN();
    });
 
-   it(' should return the average score of movies selecting only the director films. With 2 decimals! ', () => {
+   it(' should return the average score of movies selecting by the category. With 2 decimals! ', () => {
     expect(moviesAverageByCategory([
       {
         title: 'Paths of Glory',
@@ -331,7 +331,7 @@ describe('Function "moviesAverageByCategory"', () => {
         genre: ['Crime', 'Drama'],
         score: 8.9
       }
-    ], 'Quentin Tarantino')).toBe(8.65);
+    ], 'Drama')).toBe(8.57);
   });
 });
 
@@ -355,12 +355,12 @@ describe('Function "hoursToMinutes"', () => {
   });
 
   it('should return an array of movies with the correct duration for a 31 minute movie', () => {
-    const movieTry = [{ duration: '0h 31min' }];
+    const movieTry = [{ duration: '0h 31m' }];
     expect(hoursToMinutes(movieTry)[0].duration).toBe(31);
   });
 
   it('should return an array of movies with the correct duration for a 341 minute movie', () => {
-    const movieTry = [{ duration: '5h 41min' }];
+    const movieTry = [{ duration: '5h 41m' }];
     expect(hoursToMinutes(movieTry)[0].duration).toBe(341);
   });
 
