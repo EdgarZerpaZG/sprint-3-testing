@@ -26,8 +26,18 @@ cd sprint-3-testing
 npm install
 ```
 
-### Running Tests
+### Directory
+```
+Sprint 3: Testing/
+├── src/
+│   └── main.js
+├── tests/
+│   └── films.spec.js
+├── package.json
+└── README.md
+```
 
+### Running Tests
 ```
 npm run test:watch
 ```
@@ -38,32 +48,44 @@ npm run test:watch
 
 1. Get the array of all directors.
 
-2. Get the films of a certain director
+Description:
+Return an array with the names of all directors from the movie array.
+
+2. Get the films of a certain director.
+
+Description:
+Return an array with the films of one specific director.
 
 3. Calculate the average of the films of a given director.
 
+Description:
+Return an array with the average score of differents movies.
+
 4. Alphabetic order by title.
+
+Description:
+Return an array with the movies in alphabatic order.
 
 5. Order by year, ascending.
 
+Description:
+Return an array with the movies sorted by year in ascending order.
+
 6. Calculate the average of the movies in a category.
+
+Description:
+Return an array with the average score of one category from differents movies.
 
 ## Level II
 
 7. Modify the duration of movies to minutes.
 
+Description:
+Return an array with the duration modified from a string to number in minutes.
+
 ## Level III
 
 8. Get the best film of a year.
 
-### Directory
-
-```
-Sprint 3: Testing/
-├── src/
-│   └── films.js
-├── tests/
-│   └── films.spec.js
-├── package.json
-└── README.md
-```
+Description:
+Return an array with the best movie by score in a certain year.
