@@ -83,8 +83,6 @@ function hoursToMinutes(array) {
   return resultSeven;
 }
 
-
-// Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
   let resultEight = [];
   let yearFilmsScore = []
